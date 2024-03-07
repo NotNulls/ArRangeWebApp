@@ -9,11 +9,14 @@
 {% block head %}
 <meta name="keywords" content="ArRange, architecture, onepage, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin" />
 <!-- Favicon -->   
 <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="shortcut icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
 <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -38,21 +41,23 @@
         <!-- Header section start -->   
         <header class="header-area">
             <a href="home.html" class="logo-area">
-                <img src="static/img/logo.png" alt="">
+                <img src= "{{ url_for('static', filename='img/logo.png') }}" alt="">
             </a>
             <div class="nav-switch">
                 <i class="fa fa-bars"></i>
             </div>
             <div class="phone-number">+675 334 567 223</div>
-            <nav class="nav-menu">
-                <ul>
-                    <li class="active"><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            {% block navbar %}
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="active"><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            {% endblock %}
         </header>
         <!-- Header section end -->   
 
@@ -70,31 +75,11 @@
                     </div>
                 </div>
             </div>
-            <!-- hero slider area -->
-            <div class="hero-slider">
-                <div class="hero-slide-item set-bg" data-setbg="img/bg.jpg">
-                    <div class="slide-inner">
-                        <div class="slide-content">
-                        <h2>Minimalistic <br>Architecture <br> and more</h2>
-                        <a href="#" class="site-btn sb-light">See Project</a>
-                        </div>    
-                    </div>
-                </div>  
-                <div class="hero-slide-item set-bg" data-setbg="img/bg.jpg">
-                    <div class="slide-inner">
-                        <div class="slide-content">
-                        <h2>Minimalistic <br>Architecture <br> and more</h2>
-                        <a href="#" class="site-btn sb-light">See Project</a>
-                        </div>    
-                    </div>
-                </div>  
-            </div>
-            <div class="slide-num-holder" id="snh-1"></div>
-            <div class="hero-right-text">architecture</div>
-        </section>
+        <!-- hero slider area -->
+        
         <!-- Hero section end -->
 
-        <!-- Intro section start 
+        Intro section start 
         <section class="intro-section pt100 pb50">
             <div class="container">
                 <div class="row">
@@ -108,7 +93,7 @@
                     </div>
                 </div>
             </div>
-        </section>-->
+        </section>
 
         <!-- Intro section end -->
 
