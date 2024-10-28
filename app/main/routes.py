@@ -9,7 +9,18 @@ images = {
     'project_2': 'img/projects/4.jpg',
 }
 
-@bp.route('/index',methods=['GET','POST'])
-@bp.route('/',methods=['GET','POST'])
+
+@bp.route('/index', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', title='Home', images=images)
+    return render_template('index.html', title='Home', images=images) or 404
+
+
+@bp.route('/about', methods=['GET', 'POST'])
+def about_us():
+    return render_template('about.html', title='About us') or 404
+
+
+@bp.route('/portfolio', methods=['GET', 'POST'])
+def portfolio():
+    return render_template('portfolio.html', title='Portfolio') or 404

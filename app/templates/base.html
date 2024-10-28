@@ -16,7 +16,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
-<link rel="stylesheet" href="//https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//https:/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -43,26 +43,17 @@
         
         <!-- Header section end -->   
 
+        <!-- Main content block -->
+        {% block content %}
+            <!-- This section will be replaced by child templates -->
+            <!-- Default content here if any, otherwise keep it empty -->
+        {% endblock content %}
+
         <!-- Hero section start -->
 
-        <!-- <section class="hero-section">
-            left social link ber -->
-            <div class="left-bar">
-                <div class="left-bar-content">
-                    <div class="social-links">
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-        <!-- hero slider area -->
-        
         <!-- Hero section end -->
 
-        Intro section start 
+        <!-- Intro section start -->
         <section class="intro-section pt100 pb50">
             <div class="container">
                 <div class="row">
@@ -116,8 +107,8 @@
 		<script src="{{ url_for('static', filename='js/jquery.owl-filter.js')}}"></script>
 		<script src="{{ url_for('static', filename='js/magnific-popup.min.js')}}"></script>
 		<script src="{{ url_for('static', filename='js/circle-progress.min.js')}}"></script>
-		<script src="{{ url_for('static', filename='js/js/main.js')}}"></script>
+		<script src="{{ url_for('static', filename='js/main.js')}}"></script>
 
         
     </body>
-    {% endblock body %}
+{% endblock body %}

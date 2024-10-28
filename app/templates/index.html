@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+
+{% include '_header_helper.html' %}
 	
 {% block body %}
 <body>
 	
-	{% include '_header_helper.html' %}
+	
 	
 	<!-- Hero section start -->
 	<section class="hero-section">
@@ -23,14 +25,14 @@
 		<div class="hero-slider owl-carousel owl-theme owl-loaded owl-text-select-on">
 				
 				
-		<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3038px, 0px, 0px); transition: all 0s ease 0s; width: 9114px;"><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="/static/img/bg.jpg" style="background-image: url('app/static/img/bg.jpg')">
+		<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3038px, 0px, 0px); transition: all 0s ease 0s; width: 9114px;"><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}" style="background-image: {{ url_for('static', filename='img/bg.jpg') }}">
 				<div class="slide-inner">
 					<div class="slide-content">
 					<h2>Minimalistic <br>Architecture <br> and more</h2>
 					<a href="#" class="site-btn sb-light">See Project</a>
 					</div>	
 				</div>
-			</div></div><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="img/bg.jpg" style="background-image: url(img/bg.jpg);">
+			</div></div><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}" style="background-image: {{ url_for('static', filename='img/bg.jpg') }}">
 				<div class="slide-inner">
 					<div class="slide-content">
 					<h2>Minimalistic <br>Architecture <br> and more</h2>
@@ -44,21 +46,21 @@
 					<a href="#" class="site-btn sb-light">See Project</a>
 					</div>	
 				</div>
-			</div></div><div class="owl-item" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="img/bg.jpg" style="background-image: url('{{ url_for('static', filename='img/bg.jpg') }}');">
+			</div></div><div class="owl-item" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}" style="background-image: url('{{ url_for('static', filename='img/bg.jpg') }}');">
 				<div class="slide-inner">
 					<div class="slide-content">
 					<h2>Minimalistic <br>Architecture <br> and more</h2>
 					<a href="#" class="site-btn sb-light">See Project</a>
 					</div>	
 				</div>
-			</div></div><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="img/bg.jpg" style="background-image: url(&quot;img/bg.jpg&quot;);">
+			</div></div><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}" style="background-image: url(url('{{ url_for('static', filename='img/bg.jpg') }}');">
 				<div class="slide-inner">
 					<div class="slide-content">
 					<h2>Minimalistic <br>Architecture <br> and more</h2>
 					<a href="#" class="site-btn sb-light">See Project</a>
 					</div>	
 				</div>
-			</div></div><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="img/bg.jpg" style="background-image: url(&quot;img/bg.jpg&quot;);">
+			</div></div><div class="owl-item cloned" style="width: 1519px; margin-right: 0px;"><div class="hero-slide-item set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}" style="background-image: {{ url_for('static', filename='img/bg.jpg') }}">
 				<div class="slide-inner">
 					<div class="slide-content">
 					<h2>Minimalistic <br>Architecture <br> and more</h2>
@@ -261,13 +263,14 @@
 							<div class="footer-item">
 								<ul>
 									<li><a href="#">Home</a></li>
-									<li><a href="#">About us</a></li>
+									<li><a href="{{ about_us }}">About us</a></li>
 									<li><a href="#">Services</a></li>
 									<li><a href="#">Portfolio</a></li>
 									<li><a href="#">Blog</a></li>
 								</ul>
 							</div>
 						</div>
+						
 						<div class="col-md-4">
 							<div class="footer-item">
 								<ul>
@@ -302,7 +305,38 @@
 	</footer>
 	<!-- Footer section end -->
 
-
+<script>
+	$(document).ready(function(){
+		// Initialize Owl Carousel
+		$('.hero-slider').owlCarousel({
+			// Your Owl Carousel options
+		});
+	
+		// Attach event listener to the next button
+		$('.owl-next').on('click', function() {
+			// Get the current active slide
+			var activeSlide = $('.hero-slider .owl-item.active');
+			
+			// Get the background image of the next slide
+			var nextBackgroundImage = activeSlide.next('.owl-item').find('.hero-slide-item').data('setbg');
+			
+			// Update the background image of your desired element
+			$('.hero-right-text').css('background-image', 'url(' + nextBackgroundImage + ')');
+		});
+	
+		// Attach event listener to the previous button
+		$('.owl-prev').on('click', function() {
+			// Get the current active slide
+			var activeSlide = $('.hero-slider .owl-item.active');
+			
+			// Get the background image of the previous slide
+			var prevBackgroundImage = activeSlide.prev('.owl-item').find('.hero-slide-item').data('setbg');
+			
+			// Update the background image of your desired element
+			$('.hero-right-text').css('background-image', 'url(' + prevBackgroundImage + ')');
+		});
+	});
+	</script>
 
 
 	
