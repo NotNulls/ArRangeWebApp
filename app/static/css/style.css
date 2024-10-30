@@ -1156,11 +1156,12 @@ ol {
 	margin-bottom: 20px;
 }
 
-.ts-item p {
-	color: #fff;
+.ts-item .p {
+	color: #fff !important;
 	font-style: italic;
 	margin-bottom: 50px;
 }
+
 
 .ts-item h4 {
 	font-size: 15px;
