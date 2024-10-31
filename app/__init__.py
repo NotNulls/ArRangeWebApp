@@ -2,10 +2,10 @@ from config import Config
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_debugtoolbar import DebugToolbarExtension
-import os
+from flask_mail import Mail, Message
 
 bootstrap = Bootstrap()
-toolbar = DebugToolbarExtension()
+
 
 
 def create_app(config_class=Config):
@@ -18,6 +18,5 @@ def create_app(config_class=Config):
     app.register_blueprint(main_bp)
 
     bootstrap.init_app(app)
-    toolbar.init_app(app)
 
     return app
