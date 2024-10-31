@@ -1,20 +1,21 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>
+		{% block title %}
+			{% if title %} {{ title }} - ArRange {% else %} {{ ArRange }} {% endif %}
+		{% endblock %}
+	</title>
+	{% include '_head_helper.html' %}
+</head>
 
-{% block body %}
-
-	<!-- Header section end -->   
-
-
-	<!-- Page header section start -->
-	<section class="page-header-section set-bg" data-setbg="img/header-bg-2.jpg">
+<body>
+	{% include "_header_helper.html" %}	
+	<section style="background-image: url('{{ url_for('static', filename='img/header-bg-2.jpg') }}');" class="page-header-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
 		<div class="container">
 			<h1 class="header-title">Contact<span>.</span></h1>
 		</div>
 	</section>
-	<!-- Page header section end -->
-
-
-	<!-- Page section start -->
 	<section class="page-section pt100">
 		<div class="container pb100">
 			<div class="section-title pt-5">
@@ -22,8 +23,8 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-3 contact-info mb-5 mb-lg-0">
-					<p>Address: 1481 Creekside Lane Avila Beach, CA 93424 </p>
-					<p>Phone: +53 345 7953 32453</p>
+					<p>Address: Karpoška 1, 35230 Tivat </p>
+					<p>Phone: +382 67 340 862</p>
 					<p>Email: yourmail@gmail.com</p>
 					<div class="cf-social">
 						<a href="#"><i class="fa fa-google-plus"></i></a>
@@ -42,85 +43,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="map-area" id="map-canvas"></div>
-	</section>
-	<!-- Page section end -->
-
-
-
-	<!-- Footer section start -->
-	<footer class="footer-section">
-		<div class="footer-social">
-			<div class="social-links">
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-instagram"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-9 offset-lg-3">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="footer-item">
-								<ul>
-									<li><a href="#">Home</a></li>
-									<li><a href="#">About us</a></li>
-									<li><a href="#">Services</a></li>
-									<li><a href="#">Portfolio</a></li>
-									<li><a href="#">Blog</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="footer-item">
-								<ul>
-									<li><a href="#">Terms & Conditions</a></li>
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Help Desk</a></li>
-									<li><a href="#">Job Aplications</a></li>
-									<li><a href="#">Site Map</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="footer-item">
-								<ul>
-									<li><a href="#">Privacy</a></li>
-									<li><a href="#">Contact us</a></li>
-									<li><a href="#">Newsletter</a></li>
-									<li><a href="#">Clients Testimonials</a></li>
-									<li><a href="#">FAQ</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-     <div class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved.  <br>This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></div>
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	</footer>
-	<!-- Footer section end -->
-
-
-
-	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/isotope.pkgd.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.owl-filter.js"></script>
-	<script src="js/magnific-popup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/main.js"></script>
-	
-	<!-- load for map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
-	<script src="js/map.js"></script>
-
 </body>
-{% endblock %}
+{% include '_helper_footer.html' %}
+</html>

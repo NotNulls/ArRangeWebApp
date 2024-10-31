@@ -24,3 +24,7 @@ def about_us():
 @bp.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
     return render_template('portfolio.html', title='Portfolio') or 404
+
+@bp.route('/contact', methods=['GET','POST'])
+def contact(): 
+    return render_template('contact.html', title='Contact') or 404
