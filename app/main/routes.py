@@ -1,5 +1,6 @@
 from app.main import bp
-from flask import render_template
+from flask import render_template, request
+from app.email import send_email
 
 images = {
     'bg':'static/img/bg.jpg',
@@ -27,4 +28,13 @@ def portfolio():
 
 @bp.route('/contact', methods=['GET','POST'])
 def contact(): 
+    if request.method == 'POST':
+        if request.method == "POST":
+            data = request.form
+            data = request.form
+            send_email(data["name"], data["email"], data["subject"], data["message"])
+
+        
+
+        response = request
     return render_template('contact.html', title='Contact') or 404
