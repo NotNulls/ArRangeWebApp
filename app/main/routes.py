@@ -1,9 +1,11 @@
 from app.main import bp
 from flask import render_template, request
 from app.email import send_email
+from app.forms import ContactForm
+from flask import flash
 
 images = {
-    'bg':'static/img/bg.jpg',
+    'bg': 'static/img/bg.jpg',
     'project_1': 'static/img/projects/1.jpg',
     'project_2': 'img/projects/2.jpg',
     'project_1': 'img/projects/3.jpg',
@@ -26,15 +28,19 @@ def about_us():
 def portfolio():
     return render_template('portfolio.html', title='Portfolio') or 404
 
-@bp.route('/contact', methods=['GET','POST'])
-def contact(): 
-    if request.method == 'POST':
-        if request.method == "POST":
+
+@bp.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm
+
+    if request.method == "POST":
+        if form.validate_on_submit():
             data = request.form
-            data = request.form
+            print(data)
+            name = request.form['name']
+            email = request.form['email']
+            message = request.form['message']
             send_email(data["name"], data["email"], data["subject"], data["message"])
+            flash('Thank you for submitting your message!')
+    return render_template('contact.html', title='Contact', form=form) or 404
 
-        
-
-        response = request
-    return render_template('contact.html', title='Contact') or 404
