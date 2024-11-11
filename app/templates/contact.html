@@ -34,11 +34,24 @@
 					</div>
 				</div>
 				<div class="col-lg-9">
-					<form class="contact-form">
-						<input type="text" placeholder="Enter your name">
-						<input type="text" placeholder="Enter your email address">
-						<textarea placeholder="Message ..."></textarea>
-						<button class="site-btn sb-dark">Send</button>
+					<form class="contact-form" method="post">
+							{{ form.hidden_tag() }} <br>
+							<div class="form-group">
+							{{ form.name.label }}<br>
+							{{ form.name(class="form-control", placeholder="Enter your name") }}
+							</div>
+							<div class="form-group">
+								{{ form.email.label }}<br>
+								{{ form.email(class="form-control", placeholder="Enter your email") }}
+							</div>
+							<div class="form-group">
+								{{ form.message.label }}<br>
+								{{ form.message(class="form-control", placeholder="Message ...", rows=4) }}
+
+	<!--						<input type="text" placeholder="Enter your name">-->
+	<!--						<input type="text" placeholder="Enter your email address">-->
+	<!--						<textarea placeholder="Message ..."></textarea>-->
+							<button type="submit" class="site-btn sb-dark">Send</button>
 					</form>
 				</div>
 			</div>
