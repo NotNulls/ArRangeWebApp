@@ -21,6 +21,17 @@
 			<div class="section-title pt-5">
 				<h1>Get in touch</h1>
 			</div>
+			{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						<ul class="flashes">
+							{% for message in messages %}
+							<li>
+								<h3>{{ message[0:-1] }} </h3>
+							</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+			{% endwith %}
 			<div class="row">
 				<div class="col-lg-3 contact-info mb-5 mb-lg-0">
 					<p>Address: Karpoška 1, 35230 Tivat </p>
@@ -33,6 +44,7 @@
 						<a href="#"><i class="fa fa-twitter"></i></a>
 					</div>
 				</div>
+
 				<div class="col-lg-9">
 					<form class="contact-form" method="post">
 							{{ form.hidden_tag() }} <br>

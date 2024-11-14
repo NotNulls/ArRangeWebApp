@@ -36,19 +36,21 @@ def contact():
     if request.method == "POST":
         if form.validate_on_submit():
             name = request.form['name']
-            email = request.form.get('email')
+            email = request.form['email']
             message = request.form['message']
-            recipients = ""
-            html_body = f"<p>{message}</p>"
-            print('\n<-----------------------', name, email, message, html_body)
+            to = email
+            subject = "ArRange inquiry: " + name
+            sender = email
+            body = f"A message from: {name}\n Email: {sender}\n Message: {message}"
+            print('\n<-----------------------', subject, sender, message, to)
             send_email(
-                subject=name,
-                sender=email,
-                html_body=html_body,
-                recipients=["di.ar.34@gmail.com"],
-                text_body=message)
+                subject,
+                sender,
+                body,
+                to
+                )
 
-            flash('Thank you for submitting your message!')
-            print(name, email, recipients, message, html_body)
+            flash('Thank you for submitting your message!', 'success')
+            print('000000000000000000000000000000000000000000', name, email, message)
             return redirect(url_for('main.contact'))
     return render_template('contact.html', title='Contact', form=form) or 404
