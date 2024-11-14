@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>
+		{% block title %}
+			{% if title %} {{ title }} - ArRange {% else %} {{ ArRange }} {% endif %}
+		{% endblock %}
+	</title>
+	{% include '_head_helper.html' %}
+</head>
+
+<body>
+	{% include "_header_helper.html" %}
+	<section style="background-image: url('/static/img/header-bg-2.jpg');" class="page-header-section set-bg" data-setbg="/static/img/bg.jpg">
+			<div class="container">
+				<h1 class="header-title">Services<span>.</span></h1>
+			</div>
+	</section>
+	<div class="service-box-section spad set-bg" data-setbg="img/service-bg.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="solid-service-box">
+						<h2>01.</h2>
+						<h3>The idea</h3>
+						<p>Fusce commodo tincidunt convallis. <br> Nunc at purus vitae nisl sagittis grav ida ut sit amet diam.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="solid-service-box">
+						<h2>02.</h2>
+						<h3>Behind the work</h3>
+						<p>Fusce commodo tincidunt convallis. <br> Nunc at purus vitae nisl sagittis grav ida ut sit amet diam.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12">
+					<div class="solid-service-box">
+						<h2>03.</h2>
+						<h3>The Success</h3>
+						<p>Fusce commodo tincidunt convallis. <br> Nunc at purus vitae nisl sagittis grav ida ut sit amet diam.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="service-section spad">
+		<div class="container">
+			<div class="section-title">
+				<h2>Services</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="service-box">
+						<div class="sb-icon">
+							<div class="sb-img-icon">
+								<img src="{{ url_for('static', filename='img/icon/dark/1.png') }}" alt="">
+							</div>
+						</div>
+						<h3>Plans and Projects</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui eget lorem tincidunt.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="service-box">
+						<div class="sb-icon">
+							<div class="sb-img-icon">
+								<img src="{{ url_for('static', filename = 'img/icon/dark/2.png')}}" alt="">
+							</div>
+						</div>
+						<h3>Conceptual Architecture</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui eget lorem tincidunt.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="service-box">
+						<div class="sb-icon">
+							<div class="sb-img-icon">
+								<img src="{{ url_for('static', filename = 'img/icon/dark/3.png')}}" alt="">
+							</div>
+						</div>
+						<h3>Apartment Buildings</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui eget lorem tincidunt.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="service-box">
+						<div class="sb-icon">
+							<div class="sb-img-icon">
+								<img src="{{ url_for('static', filename = 'img/icon/dark/4.png')}}" alt="">
+							</div>
+						</div>
+						<h3>Skyscrapers Buildings</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui eget lorem tincidunt.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="service-box">
+						<div class="sb-icon">
+							<div class="sb-img-icon">
+								<img src="{{ url_for('static', filename = 'img/icon/dark/5.png')}}" alt="">
+							</div>
+						</div>
+						<h3>Documentation</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui eget lorem tincidunt.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="service-box">
+						<div class="sb-icon">
+							<div class="sb-img-icon">
+								<img src="{{ url_for('static', filename = 'img/icon/dark/6.png')}}" alt="">
+							</div>
+						</div>
+						<h3>Restauration Projects</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dui eget lorem tincidunt.</p>
+						<a href="#" class="readmore">READ MORE</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% include '_helper_footer.html' %}
+</body>

@@ -42,7 +42,6 @@ def contact():
             subject = "ArRange inquiry: " + name
             sender = email
             body = f"A message from: {name}\n Email: {sender}\n Message: {message}"
-            print('\n<-----------------------', subject, sender, message, to)
             send_email(
                 subject,
                 sender,
@@ -51,6 +50,10 @@ def contact():
                 )
 
             flash('Thank you for submitting your message!', 'success')
-            print('000000000000000000000000000000000000000000', name, email, message)
             return redirect(url_for('main.contact'))
     return render_template('contact.html', title='Contact', form=form) or 404
+
+
+@bp.route('/services', methods=['GET'])
+def services():
+    return render_template('services.html', title='Services')
