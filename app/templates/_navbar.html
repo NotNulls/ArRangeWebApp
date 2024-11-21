@@ -1,9 +1,9 @@
 <nav class="nav-menu">
     <ul>
-        <li class="active"><a href="{{ url_for('main.index') }}">Home</a></li>
-        <li><a href="{{ url_for('main.about_us') }}">About us</a></li>
-        <li><a href="{{ url_for('main.services') }}">Services</a></li>
-        <li><a href="{{ url_for('main.portfolio') }}">Portfolio</a></li>
-        <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+        <li class="{% if request.endpoint == 'main.index' %}active{% endif %}"><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li class="{% if request.endpoint == 'main.about_us' %}active{% endif %}"><a href="{{ url_for('main.about_us') }}">About us</a></li>
+        <li class="{% if request.endpoint == 'main.services' %}active{% endif %}"><a href="{{ url_for('main.services') }}">Services</a></li>
+        <li class="{% if request.endpoint == 'main.portfolio' %}active{% endif %}"><a href="{{ url_for('main.portfolio') }}">Portfolio</a></li>
+        <li class="{% if request.endpoint == 'main.contact' %}active{% endif %}"><a href="{{ url_for('main.contact') }}">Contact</a></li>
     </ul>
 </nav>
