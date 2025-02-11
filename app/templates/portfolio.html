@@ -87,26 +87,9 @@
 	<!-- Page section end -->
 
 {% endblock %}
-
+{% include '_helper_footer.html' %}
 {% include "_script_helper.html" %}
-
-<!--<script>-->
-<!--	event.preventDefault(); // Prevent the default anchor behavior-->
-<!--        // Remove the 'active' class from all pagination links-->
-<!--        document.querySelectorAll('.pagination a').forEach((item) => {-->
-<!--          item.classList.remove('active');-->
-<!--          item.style.fontSize = ''; // Reset font size-->
-<!--        });-->
-<!--        // Add the 'active' class to the clicked link-->
-<!--        this.classList.add('active');-->
-<!--        this.style.fontSize = '48px'; // Set the active font size for clicked link-->
-<!--      });-->
-<!--    });-->
-<!--</script>-->
-document.querySelectorAll('.pagination a').forEach((link) => {
-link.addEventListener('click', function (event) {
-
 </body>
 <!-- Footer section start -->
-{% include '_helper_footer.html' %}
+
 <!-- Footer section end -->
