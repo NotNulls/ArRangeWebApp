@@ -34,6 +34,7 @@ def contact():
     form = ContactForm()
 
     if request.method == "POST":
+
         if form.validate_on_submit():
             name = request.form['name']
             email = request.form['email']
