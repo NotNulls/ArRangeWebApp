@@ -4,14 +4,10 @@
 {% endblock %}
 </title>
 
-{% block head %}
-<head>
-    {% include "_head_helper.html" %}
-</head>
-{% endblock %}
-
+{% include "_head_helper.html" %}
 
 <body>
+{% include "_header_helper.html" %}
 {% block content %}
 	<!-- Page header section start -->
 	<section class="page-header-section set-bg" data-setbg="{{ url_for('static', filename='img/bg.jpg') }}">
