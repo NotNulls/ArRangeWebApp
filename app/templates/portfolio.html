@@ -4,29 +4,12 @@
 {% endblock %}
 </title>
 
-<head>
 {% block head %}
-<meta name="keywords" content="ArRange, architecture, onepage, creative, html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="strict-origin" />
-<!-- Favicon -->   
-<link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="shortcut icon">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-
-<link rel="stylesheet" href="//https:/maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- Stylesheets -->
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-{% endblock %}
+<head>
+    {% include "_head_helper.html" %}
 </head>
+{% endblock %}
 
-{% include '_header_helper.html' %}
 
 <body>
 {% block content %}
